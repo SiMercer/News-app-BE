@@ -19,7 +19,7 @@ jobs:
           host: ${{ secrets.PI_HOST }}
           username: pi
           key: ${{ secrets.PI_SSH_KEY }}
-          port: 22
+          port: 23706
           script: |
             cd ~/github/News-app-BE
             git pull origin main
