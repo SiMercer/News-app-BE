@@ -50,7 +50,7 @@ const seed = ({ topicData, userData, articleData, commentData }) => {
 
     })
     .catch((err) => {
-      // console.log(err)
+      console.error('Seeding error:', err);
     });
 
 

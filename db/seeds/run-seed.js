@@ -3,7 +3,11 @@ const seed = require('./seed.js');
 const db = require('../connection.js');
 
 const runSeed = () => {
-  return seed(devData).then(() => db.end());
+  console.log(' Running seed...');
+  return seed(devData).then(() => {
+    console.log(' Seeding complete.');
+    db.end();
+  });
 };
 
 runSeed();
