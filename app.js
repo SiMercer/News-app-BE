@@ -35,21 +35,39 @@ app.get('/test', (req, res) => {
 
 app.get(`${apiBase}`, apiRequest);
 
+// app.get('/topics', getTopics);
+
+// app.get('/articles', getArticles);
+// app.post(`${apiBase}/articles`, postArticle);
+// app.get(`${apiBase}/articles/:article_id`, getArticleByID);
+// app.patch(`${apiBase}/articles/:article_id`, patchArticleByID);
+
+// app.get(`${apiBase}/articles/:article_id/comments`, getCommentsByArticleByID);
+// app.post(`${apiBase}/articles/:article_id/comments`, postCommentsByArticleByID);
+
+// app.patch(`${apiBase}/comments/:comment_id`, patchCommentVotes);
+// app.delete(`${apiBase}/comments/:comment_id`, deleteCommentByID);
+
+// app.get(`${apiBase}/users`, getUsers);
+// app.get(`${apiBase}/users/:username`, getUserByUsername);
+
 app.get('/topics', getTopics);
 
-app.get(`${apiBase}/articles`, getArticles);
-app.post(`${apiBase}/articles`, postArticle);
-app.get(`${apiBase}/articles/:article_id`, getArticleByID);
-app.patch(`${apiBase}/articles/:article_id`, patchArticleByID);
+app.get('/articles', getArticles);
+app.post('/articles', postArticle);
+app.get('/articles/:article_id', getArticleByID);
+app.patch('/articles/:article_id', patchArticleByID);
 
-app.get(`${apiBase}/articles/:article_id/comments`, getCommentsByArticleByID);
-app.post(`${apiBase}/articles/:article_id/comments`, postCommentsByArticleByID);
+app.get('/articles/:article_id/comments', getCommentsByArticleByID);
+app.post('/articles/:article_id/comments', postCommentsByArticleByID);
 
-app.patch(`${apiBase}/comments/:comment_id`, patchCommentVotes);
-app.delete(`${apiBase}/comments/:comment_id`, deleteCommentByID);
+app.patch('/comments/:comment_id', patchCommentVotes);
+app.delete('/comments/:comment_id', deleteCommentByID);
 
-app.get(`${apiBase}/users`, getUsers);
-app.get(`${apiBase}/users/:username`, getUserByUsername);
+app.get('/users', getUsers);
+app.get('/users/:username', getUserByUsername);
+
+
 
 app.all("*", (req, res) => {
   res.status(404).send({ msg: "path not found" });
