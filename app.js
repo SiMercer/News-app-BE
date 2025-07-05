@@ -31,7 +31,7 @@ const apiBase = "/";
 
 app.get(`${apiBase}`, apiRequest);
 
-app.get(`${apiBase}/topics`, getTopics);
+app.get(`${apiBase}topics`, getTopics);
 
 app.get(`${apiBase}/articles`, getArticles);
 app.post(`${apiBase}/articles`, postArticle);
