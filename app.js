@@ -29,6 +29,10 @@ app.use(express.json());
 // Use a base path for the API
 const apiBase = "/";
 
+app.get('/test', (req, res) => {
+  res.send({ msg: "test route works" });
+});
+
 app.get(`${apiBase}`, apiRequest);
 
 app.get(`${apiBase}topics`, getTopics);
