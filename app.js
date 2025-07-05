@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 // Use a base path for the API
-const apiBase = "/";
+const apiBase = "/api";
 
 app.get(`${apiBase}`, apiRequest);
 
