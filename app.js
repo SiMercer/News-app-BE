@@ -27,12 +27,7 @@ app.use(cors());
 app.use(express.json());
 
 // Use a base path for the API
-const apiBase = "";
-
-app.use((req, res, next) => {
-  console.log(`Incoming request: ${req.method} ${req.url}`);
-  next();
-});
+const apiBase = "/";
 
 app.get('/test', (req, res) => {
   res.send({ msg: "test route works" });
@@ -40,7 +35,7 @@ app.get('/test', (req, res) => {
 
 app.get(`${apiBase}`, apiRequest);
 
-app.get(`${apiBase}topics`, getTopics);
+app.get('/topics', getTopics);
 
 app.get(`${apiBase}/articles`, getArticles);
 app.post(`${apiBase}/articles`, postArticle);
