@@ -26,6 +26,10 @@ const {
 app.use(cors());
 app.use(express.json());
 
+
+
+
+
 // Use a base path for the API
 const apiBase = "/";
 
@@ -74,6 +78,7 @@ app.all("*", (req, res) => {
 });
 
 app.use((err, req, res, next) => {
+    console.error("Error caught:", err); // Add this line
   if (err.code === "23503") {
     res.status(404).send({ msg: "Not found" });
   } else if (err.code === "22P02") {
