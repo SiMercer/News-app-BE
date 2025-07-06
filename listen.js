@@ -1,7 +1,8 @@
+require('dotenv').config(); // ← Load .env vars
+
 const app = require("./app");
 
-// const { PORT = 3000 } = process.env;
-const PORT = 3000;
+const { PORT = 3000 } = process.env;
 
 app.listen(PORT, (err) => {
   if (err) {
