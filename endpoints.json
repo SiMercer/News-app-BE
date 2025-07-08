@@ -1,15 +1,15 @@
 {
-  "GET /api": {
+  "GET /": {
     "description": "serves up a json representation of all the available endpoints of the api"
   },
-  "GET /api/topics": {
+  "GET /topics": {
     "description": "serves an array of all topics",
     "queries": [],
     "exampleResponse": {
       "topics": [{ "slug": "football", "description": "Footie!" }]
     }
   },
-  "GET /api/articles": {
+  "GET /articles": {
     "description": "serves an array of all articles, queries 'sort_by' and/or 'order' can be included",
     "queries": [
       [
@@ -37,7 +37,7 @@
       ]
     }
   },
-  "GET /api/articles/:article_id": {
+  "GET /articles/:article_id": {
     "description": "serves an article by ID",
     "queries": [],
     "exampleResponse": {
@@ -54,7 +54,7 @@
       ]
     }
   },
-  "PATCH /api/articles/:article_id": {
+  "PATCH /articles/:article_id": {
     "description": "increases or decreases an articles vote value by number, 'inc_votes' in body ",
     "queries": [],
     "body": {
@@ -74,7 +74,7 @@
       ]
     }
   },
-  "GET /api/articles/:article_id/comments": {
+  "GET /articles/:article_id/comments": {
     "description": "serves an array of all comments associated with an article_id",
     "queries": [],
     "exampleResponse": {
@@ -90,7 +90,7 @@
       ]
     }
   },
-  "POST /api/articles/:article_id/comments": {
+  "POST /articles/:article_id/comments": {
     "description": "post new comment to article",
     "queries": [],
     "body": {
@@ -109,7 +109,7 @@
         }
       ]
     },
-    "DELETE /api/comments/:commet_id": {
+    "DELETE /comments/:commet_id": {
       "description": "delete a comment",
       "queries": [],
       "exampleResponse": {}
